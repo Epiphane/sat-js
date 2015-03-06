@@ -13,7 +13,8 @@ describe("collision of", function(){
 
     assert( collided );
     assert( response.overlap == 10 );
-    assert( response.overlapV.x == 10 && response.overlapV.y === 0);
+    assert( response.overlapV.x == 10 );
+    assert( response.overlapV.y === 0 );
   });
 
   it("circle and polygon", function(){

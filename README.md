@@ -1,6 +1,8 @@
 SAT.js
 ======
 
+** NOTE: **
+
  - [Classes](#classes)
  - [Collision Tests](#tests)
  - [Examples](#examples)
@@ -45,9 +47,7 @@ It has the following properties:
 
 It contains the following methods:
 
- - `copy(other)` - Copy the value of another Vector to this one.
- - `clone()` - Return a new vector with the same coordinates as this one.
- - `perp()` - Change this vector to be perpendicular to what it was before.
+ - `perp()` - Generate a vector perpendicular to this one.
  - `rotate(angle)` - Rotate this vector counter-clockwise by the specified number of radians.
  - `reverse()` - Reverse this Vector.
  - `normalize()` - Make the Vector unit-lengthed.
