@@ -1,11 +1,26 @@
-SAT.js
-======
+SAT.js (Immutable)
+=======================
 
-** NOTE: **
+**NOTE:** This is not the **original** SAT library. It is simply an immutable port of  [jriecken's version](https://github.com/jriecken/sat-js).
 
  - [Classes](#classes)
  - [Collision Tests](#tests)
  - [Examples](#examples)
+
+Key Difference from [jriecken's version](https://github.com/jriecken/sat-js)
+-----
+
+My version of SAT.js uses immutability with its vectors, instead of forcing you to clone() every vector you want to use. For example:
+
+```
+var v = new SAT.Vector(10, 10);
+v.add(new SAT.Vector(10, 10)); // Returns { x: 20, y: 20 }
+v.add(new SAT.Vector(10, 10)); // Returns { x: 20, y: 20 }
+```
+
+In the original version of SAT, v would now permanently have a value of ```{ x: 30, y: 30 }```. Instead, immutability allows you to easily read code and be sure that any vector you manipulate will not lose its original value.
+
+This code is not exhaustive or dramatically different from SAT.js besides that.
 
 About
 -----
@@ -20,11 +35,7 @@ It also supports checking whether a point is inside a circle or polygon.
 
 It's released under the [MIT](http://en.wikipedia.org/wiki/MIT_License) license.
 
-Current version: `0.5.0`. [Annotated source code](http://jriecken.github.io/sat-js/docs/SAT.html) is available.
-
 Nicely compresses with the [Google Closure Compiler](https://developers.google.com/closure/compiler/) in **Advanced** mode to about 6KB (2KB gzipped)
-
-To use it in node.js, you can run `npm install sat` and then use it with `var SAT = require('sat');`
 
 <a name="classes"></a>
 Classes
